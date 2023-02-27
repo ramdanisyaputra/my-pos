@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
+import CartItem from "./components/CartItem";
 import { useSelector } from "react-redux";
 import styled, { ThemeProvider } from "styled-components";
 import * as theme from "./styled/theme"
@@ -22,15 +23,15 @@ const ProductContainer = styled.div`
   background: ${props => props.theme.light};
   border-left: 1px solid #f7f7f7;
   border-right: 1px solid #f7f7f7;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 `
 
 const CartContainer = styled.div`
-  width: 25%
-  padding: 0.5rem 0;
+  width: 25%;
+  padding: 0.5rem 0.5rem;
 `
 
 const App = () => {
@@ -42,10 +43,12 @@ const App = () => {
         <MenuContainer>menu</MenuContainer>
         <ProductContainer>
           {products.map(product => 
-            <ProductCard key={products.id} item={product}/> 
+            <ProductCard item={product} key={product.id}/> 
           )}
         </ProductContainer>
-        <CartContainer>cart</CartContainer>
+        <CartContainer>
+          <CartItem />
+        </CartContainer>
       </Container>
     </ThemeProvider>
   )
