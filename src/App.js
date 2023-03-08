@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
 import CartItem from "./components/CartItem";
+import ListMenu from "./components/ListMenu";
 import { useSelector } from "react-redux";
 import styled, { ThemeProvider } from "styled-components";
 import * as theme from "./styled/theme"
@@ -40,7 +41,9 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Header />
       <Container>
-        <MenuContainer>menu</MenuContainer>
+        <MenuContainer>
+          <ListMenu />
+        </MenuContainer>
         <ProductContainer>
           {products.map(product => 
             <ProductCard item={product} key={product.id}/> 
