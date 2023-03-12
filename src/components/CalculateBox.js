@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components"
+import { resetCart } from "../store/actions/product"
 import Button from "./Button"
 
 const Box = styled.div`
@@ -49,6 +50,7 @@ const BtnBox = styled.div`
 `
 
 const CalculateBox = () => {
+    const dispatch = useDispatch();
     const carts = useSelector(state => state.product.carts)
     const total = carts.reduce((totalPrice, current) => totalPrice + current.price, 0)
     const [pay, setPay] = useState("")
@@ -60,6 +62,11 @@ const CalculateBox = () => {
         if(pay > total){
             setChange(pay - total)
         }
+    }
+    const reset = () => {
+        dispatch(resetCart())
+        setChange("")
+        setPay("")
     }
     return (
         <Box>
@@ -76,8 +83,8 @@ const CalculateBox = () => {
                 <p>{change}</p>
             </Change>
             <BtnBox>
-                <Button />
-                <Button primary action={calculateChange}/>
+                <Button text="reset" action={reset}/>
+                <Button primary action={calculateChange} text="selesai"/>
             </BtnBox>
         </Box>
     )
