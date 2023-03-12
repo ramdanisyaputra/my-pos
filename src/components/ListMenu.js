@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import styled from "styled-components"
+import { Link, useLocation } from "react-router-dom";
+import styled, { css } from "styled-components"
 
 const Menu = styled.li`
     height: 2rem;
@@ -12,19 +13,33 @@ const Menu = styled.li`
     &:not(:last-child){
         margin-botton: 0.5rem;
     }
-    &:nth-child(2){
-        background: ${props => props.theme.primary};
-        color: ${props => props.theme.light};
-    }
 `
 
+const StyledLink = styled(Link)`
+    ${(props) =>
+        props.selected && css`
+        background: ${props => props.theme.primary};
+        color: ${props => props.theme.light};
+    `};
+    text-decoration: none;
+`;
+
 const ListMenu = () => {
-    const [menu] = useState(["Favorite", "Makanan", "Minuman", "Cemilan"])
+    const [menu] = useState([
+        { name: "Favorite", category: "favorite" },
+        { name: "Makanan", category: "makanan" },
+        { name: "Minuman", category: "minuman" },
+        { name: "Cemilan", category: "cemilan" },
+    ]);
+    
+    const { pathname } = useLocation();
+    const currentCategory = pathname.slice(1) === '' ? 'makanan' : pathname.slice(1);
+
     return (
         <ul>
-            {menu.map((item, index) => 
+            {menu.map((item, index) =>  
                 <Menu key={index}>
-                    {item}
+                    <StyledLink to={"/" + item.category} selected={item.category === currentCategory} >{item.name}</StyledLink>
                 </Menu>
             )}
         </ul>

@@ -8,10 +8,12 @@ const Card = styled.div`
     height: 12rem;
     cursor: pointer;
 `
+
 const CardImg = styled.img`
     width: 100%;
     height: 50%;
 `
+
 const NamePrice = styled.div`
     display: flex;
     justify-content: space-between;

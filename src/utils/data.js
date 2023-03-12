@@ -103,6 +103,111 @@ export const products = [
     image: require("../assets/foods/makanan5.png"),
     category: "makanan",
     price: 12000
+  },
+  {
+    id: 16,
+    name: "Cappuccino",
+    image: require("../assets/foods/makanan1.png"),
+    category: "minuman",
+    price: 15000
+  },
+  {
+    id: 17,
+    name: "Latte",
+    image: require("../assets/foods/makanan1.png"),
+    category: "minuman",
+    price: 18000
+  },
+  {
+    id: 18,
+    name: "Matcha Latte",
+    image: require("../assets/foods/makanan1.png"),
+    category: "minuman",
+    price: 20000
+  },
+  {
+    id: 19,
+    name: "Jasmine Tea",
+    image: require("../assets/foods/makanan1.png"),
+    category: "minuman",
+    price: 12000
+  },
+  {
+    id: 20,
+    name: "Mint Lemonade",
+    image: require("../assets/foods/makanan2.png"),
+    category: "minuman",
+    price: 15000
+  },
+  {
+    id: 21,
+    name: "Favorite Food 1",
+    image: require("../assets/foods/makanan1.png"),
+    category: "favorite",
+    price: 20000
+  },
+  {
+    id: 22,
+    name: "Favorite Food 2",
+    image: require("../assets/foods/makanan2.png"),
+    category: "favorite",
+    price: 25000
+  },
+  {
+    id: 23,
+    name: "Favorite Food 3",
+    image: require("../assets/foods/makanan1.png"),
+    category: "favorite",
+    price: 30000
+  },
+  {
+    id: 24,
+    name: "Favorite Food 4",
+    image: require("../assets/foods/makanan2.png"),
+    category: "favorite",
+    price: 35000
+  },
+  {
+    id: 25,
+    name: "Favorite Food 5",
+    image: require("../assets/foods/makanan1.png"),
+    category: "favorite",
+    price: 40000
+  },
+  {
+    id: 26,
+    name: "Favorite Food 6",
+    image: require("../assets/foods/makanan2.png"),
+    category: "favorite",
+    price: 45000
+  },
+  {
+    id: 27,
+    name: "Favorite Food 7",
+    image: require("../assets/foods/makanan1.png"),
+    category: "favorite",
+    price: 50000
+  },
+  {
+    id: 28,
+    name: "Favorite Food 8",
+    image: require("../assets/foods/makanan2.png"),
+    category: "favorite",
+    price: 55000
+  },
+  {
+    id: 29,
+    name: "Favorite Food 9",
+    image: require("../assets/foods/makanan1.png"),
+    category: "favorite",
+    price: 60000
+  },
+  {
+    id: 30,
+    name: "Favorite Food 10",
+    image: require("../assets/foods/makanan2.png"),
+    category: "favorite",
+    price: 65000
   }
 ]
 

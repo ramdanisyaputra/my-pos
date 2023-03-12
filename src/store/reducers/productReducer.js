@@ -19,7 +19,7 @@ const productReducer = (state = initialState, action) => {
                     carts: [...state.carts, newItemCart]
                 }
             }else{
-                return state
+                return alert('data sudah ada di cart');
             }
         case "INCREMENT":
             const originalPrice = state.products.find(item => item.id === payload).price
